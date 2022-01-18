@@ -1,66 +1,127 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## 環境構築
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+1. Docker Desktop
+2. composer (version 2.x)
 
-## About Laravel
+上記二つは必ずインストールした上で始めてください。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Mac
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. Terminal.app を開きます
+2. `git clone git@github.com:SuguruOoki/tests.git` で自分のPCにこのリポジトリをダウンロードします
+3. `cd tests` でカレントディレクトリをダウンロードしたディレクトリである `tests` に移動します。
+4. `cp .env.example .env` を実行し、必要な環境の情報が書かれた `.env` ファイルを作成します。
+5. `docker compose up -d --build` を実行します。
+6. 表示が流れていくのが終わったら `docker compose ps` で次のような表示になっていることを確認します。表示されていれば、環境構築が終了です。
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Windows
 
-## Learning Laravel
+Windows ではMacにおけるTerminalや必要なソフトウェアであるGitがデフォルトで入っていないため、
+実行できるようなアプリケーションをインストールしましょう。
+すでにインストールされている場合は、手順を実行する必要はありません。
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# Windows における初期設定
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Windows での初期設定を行うためには、キャラクターユーザーインターフェイス（CUI）の操作を行う必要があります。
 
-## Laravel Sponsors
+#### PowerShell の起動方法
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Windows では、**PowerShell**とよばれるシェルが標準で搭載されています。シェルはキャラクターユーザーインターフェイスの 1 つで、ファイルやディレクトリの操作などに特化したものです。
 
-### Premium Partners
+PowerShell を起動するには、スタートボタン（左下にある Windows のロゴ）を右クリックするか、`Win-X`キーを押して以下のメニューを表示してください。
+管理者権限を必要とする場合は「Windows PowerShell (管理者)(A)」、それ以外の場合は「Windows PowerShell(I)」をクリックしましょう。
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
+![image](https://user-images.githubusercontent.com/298748/115985113-42199a00-a5e5-11eb-9f7c-85c19f73666b.png)
 
-## Contributing
+#### PowerShell を操作する
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+PowerShell を起動すると、以下のような画面が出てきます。
 
-## Code of Conduct
+![image](https://user-images.githubusercontent.com/298748/115985231-d2f07580-a5e5-11eb-9dd8-5e9751df590b.png)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+シェルは、上のような**端末**と呼ばれる画面に文字を入力することにより操作します。試しに文字を入力してみましょう。
+`>`以下に入力した文字が現れます。`>`のように、入力待ちになっていることを表す記号を**プロンプト**と言います。
 
-## Security Vulnerabilities
+プロンプトに文字を入力し`Enter`キーを押すと、コンピュータはその内容（指示）に合わせて動作します。このような指示を**コマンド**と呼びます。コマンドにはさまざまな決まりがありますが、ここではその説明は割愛します。
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+つぎに、コピー＆ペーストのやり方について説明します。ブラウザ上でコピー（`Ctrl-c`）したものを貼り付けるには、端末上で**右クリック**します。また、端末上の文字をコピーしたいときには、コピーしたい部分をドラッグで選択し**右クリック**します。メモ帳などにペースト（`Ctrl-v`）して正しくコピーできるか確認するといいでしょう。
 
-## License
+```powershell
+winver
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+では試しに、上のコマンドをコピー＆ペーストして`Enter`キーを押しましょう。以下の画面が出たら成功です。
+
+![image](https://user-images.githubusercontent.com/298748/115985269-0206e700-a5e6-11eb-9394-9a50ed6e9d49.png)
+
+#### 作業ディレクトリ
+
+シェルには、**作業ディレクトリ**というものが存在します。
+
+ファイルやディレクトリがどこにあるかを**パス**と言われる文字列で表現しますが、すべて絶対パスで指定していては煩わしいです。
+作業ディレクトリを決めておくと、そのディレクトリとの相対位置でパスを表現できるようになります。住所や部屋番号を言うより、お隣さんや近所の〇〇さんと言ってしまった方が簡単なのと同じです。
+
+そのため多くのコマンドは、作業ディレクトリ上で操作を行うことを想定しています。たとえば、
+
+```powershell
+mkdir {ディレクトリ名}
+```
+
+のようなコマンドは、`{ディレクトリ名}`に一致するディレクトリを作業ディレクトリ内に作成します。
+
+作業ディレクトリを変更するには、`cd`コマンドを使います。
+
+```powershell
+cd （ここにパスが入る）
+```
+
+作業ディレクトリの中身を見るには、`dir`コマンドを使います。
+
+```powershell
+dir
+```
+
+シェルの起動時には、多くの場合ホームディレクトリが作業ディレクトリとして指定してあります。ホームディレクトリは頻繁に用いるものなので、`~`という略称が与えられています。
+
+```powershell
+cd ~
+```
+
+でホームディレクトリに戻ることを確認しましょう。
+
+#### Scoop を用いた環境構築（推奨）
+
+**パッケージ管理ツール**と呼ばれる、ソフトウェアのインストールを簡単にするためのツールをインストールします。
+[Chocolatey](https://chocolatey.org/) など他のパッケージ管理ツールもありますが、
+[Scoop](https://scoop.sh/) を用いた環境構築を推奨します。
+
+Scoop をインストールするには、PowerShell を**管理者権限**で起動し、以下のコマンドを入力します：
+
+```powershell
+iwr -useb get.scoop.sh | iex
+```
+
+インストールに失敗する際は、以下のコマンドを入力してから再度上のコマンドを入力してみましょう：
+
+```powershell
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+```
+
+これらの操作を行うためには、ユーザーアカウントに[管理者権限](https://support.microsoft.com/ja-jp/windows/63267a09-9926-991a-1c77-d203160c8563)があることが前提となります。
+
+#### Git、node および yarn のインストール
+
+Railway を進めるには、**Git**、**node**、**yarn**のインストールが必要です。管理者権限で起動した PowerShell に以下のコマンドを入力して、Scoop を経由してインストールしましょう：
+
+```powershell
+scoop install git nodejs-lts yarn
+```
+
+#### 最後にこのリポジトリを自分のPC(ローカル環境)にダウンロード(Git Clone)します。
+
+1. PowerShell を開きます
+2. `git clone git@github.com:SuguruOoki/tests.git` で自分のPCにこのリポジトリをダウンロードします
+3. `cd tests` でカレントディレクトリをダウンロードしたディレクトリである `tests` に移動します。
+4. `cp .env.example .env` を実行し、必要な環境の情報が書かれた `.env` ファイルを作成します。
+5. `docker compose up -d --build` を実行します。
+6. 表示が流れていくのが終わったら `docker compose ps` で次のような表示になっていることを確認します。表示されていれば、環境構築が終了です。
