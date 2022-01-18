@@ -1,7 +1,6 @@
 # 環境構築
 
 1. Docker Desktop
-2. composer (version 2.x)
 
 上記二つは必ずインストールした上で始めてください。
 
