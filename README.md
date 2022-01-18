@@ -1,26 +1,27 @@
-## 環境構築
+# 環境構築
 
 1. Docker Desktop
 2. composer (version 2.x)
 
 上記二つは必ずインストールした上で始めてください。
 
-### Mac
+## Macにおける初期設定
 
 1. Terminal.app を開きます
 2. `git clone git@github.com:SuguruOoki/tests.git` で自分のPCにこのリポジトリをダウンロードします
 3. `cd tests` でカレントディレクトリをダウンロードしたディレクトリである `tests` に移動します。
 4. `cp .env.example .env` を実行し、必要な環境の情報が書かれた `.env` ファイルを作成します。
 5. `docker compose up -d --build` を実行します。
-6. 表示が流れていくのが終わったら `docker compose ps` で次のような表示になっていることを確認します。表示されていれば、環境構築が終了です。
+6. ↓のような表示が流れていくことを確認してください
 
-### Windows
+![d161a9cadf8e80bcaa66273d3f2ee10b](https://user-images.githubusercontent.com/16362021/149891105-ef42351e-006b-4985-95dc-a8c210ef19ea.gif)
 
-Windows ではMacにおけるTerminalや必要なソフトウェアであるGitがデフォルトで入っていないため、
-実行できるようなアプリケーションをインストールしましょう。
-すでにインストールされている場合は、手順を実行する必要はありません。
+7. `docker compose ps` というコマンドを打って次のような表示になっていれば、環境構築は終了です。お疲れ様でした！
 
-# Windows における初期設定
+![スクリーンショット 2022-01-18 16 31 52](https://user-images.githubusercontent.com/16362021/149891200-e6da2ca6-662d-4cee-8ec6-816ef6c06b77.png)
+
+
+## Windows における初期設定
 
 Windows での初期設定を行うためには、キャラクターユーザーインターフェイス（CUI）の操作を行う必要があります。
 
@@ -124,4 +125,10 @@ scoop install git nodejs-lts yarn
 3. `cd tests` でカレントディレクトリをダウンロードしたディレクトリである `tests` に移動します。
 4. `cp .env.example .env` を実行し、必要な環境の情報が書かれた `.env` ファイルを作成します。
 5. `docker compose up -d --build` を実行します。
-6. 表示が流れていくのが終わったら `docker compose ps` で次のような表示になっていることを確認します。表示されていれば、環境構築が終了です。
+6. ↓のような表示が流れていくことを確認してください
+
+![d161a9cadf8e80bcaa66273d3f2ee10b](https://user-images.githubusercontent.com/16362021/149891105-ef42351e-006b-4985-95dc-a8c210ef19ea.gif)
+
+7. `docker compose ps` というコマンドを打って次のような表示になっていれば、環境構築は終了です。お疲れ様でした！
+
+![スクリーンショット 2022-01-18 16 31 52](https://user-images.githubusercontent.com/16362021/149891200-e6da2ca6-662d-4cee-8ec6-816ef6c06b77.png)
