@@ -24,3 +24,26 @@
 ## 画像の追加サイト
 参考 \
 https://picsum.photos/
+
+## 使うコマンド
+コンテナに入る
+
+phpコンテナ
+```
+docker compose exec php bash
+```
+
+webコンテナ
+```
+docker compose exec nginx bash
+```
+
+DBコンテナ
+```
+docker compose exec mysql bash
+```
+
+webページへ接続
+```
+http://localhost:8888/
+```
